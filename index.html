@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>成都兴孺广告创意策划有限公司</title>
-    <!-- 内联样式，方便你直接修改；后续可移到 css/style.css 中 -->
     <style>
         * {
             margin: 0;
@@ -13,7 +12,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
             color: #333;
         }
@@ -27,7 +26,7 @@
         /* 导航栏 */
         .navbar {
             background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -37,97 +36,134 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 1.2rem 0;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #e67e22;
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
+            font-size: 1rem;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #e67e22;
+            color: #2a5298;
         }
 
-        /* 移动端菜单（简单处理） */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* 实际项目中可用汉堡菜单，这里简化 */
+                display: none;
             }
         }
 
-        /* Hero 区域 */
+        /* Hero 区域 - 简约大气 */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg') center/cover no-repeat;
-            color: #fff;
+            background: linear-gradient(145deg, #f8faff 0%, #eef2f9 100%);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(42, 82, 152, 0.03);
+            border-radius: 50%;
+            top: -150px;
+            right: -150px;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(30, 60, 114, 0.03);
+            border-radius: 50%;
+            bottom: -100px;
+            left: -100px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
             text-align: center;
-            padding: 6rem 0;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
         }
 
         .btn {
             display: inline-block;
-            background: #e67e22;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: #fff;
-            padding: 0.8rem 2rem;
+            padding: 1rem 2.8rem;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+            border-radius: 50px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 20px rgba(42, 82, 152, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .btn:hover {
-            background: #cf6a17;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(42, 82, 152, 0.3);
         }
 
-        /* 服务介绍 */
+        /* 服务介绍 - 卡片式 */
         .services {
-            padding: 4rem 0;
-            background: #f9f9f9;
+            padding: 5rem 0;
+            background: #fff;
         }
 
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            margin-bottom: 3rem;
-            position: relative;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e3c72;
         }
 
-        .section-title::after {
-            content: '';
-            width: 80px;
-            height: 3px;
-            background: #e67e22;
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
         }
 
         .service-grid {
@@ -138,121 +174,217 @@
 
         .service-card {
             background: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             text-align: center;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(42, 82, 152, 0.1);
+            border-color: rgba(42, 82, 152, 0.1);
         }
 
-        .service-card i {
-            font-size: 3rem;
-            color: #e67e22;
-            margin-bottom: 1rem;
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #f0f4fd 0%, #e6ecf9 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .service-icon span {
+            font-size: 2.5rem;
+            line-height: 1;
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
             margin-bottom: 1rem;
+            color: #1e3c72;
         }
 
         .service-card p {
             color: #666;
+            font-size: 0.95rem;
         }
 
-        /* 关于我们 */
+        /* 关于我们 - 左右布局 */
         .about {
-            padding: 4rem 0;
+            padding: 5rem 0;
+            background: #f8faff;
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .about-text h2 {
             font-size: 2rem;
+            font-weight: 600;
+            color: #1e3c72;
             margin-bottom: 1.5rem;
         }
 
         .about-text p {
-            margin-bottom: 1rem;
             color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
         }
 
-        .about-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        .about-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2a5298;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 20px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 1.2rem;
+            box-shadow: 0 20px 40px rgba(42, 82, 152, 0.2);
         }
 
         @media (max-width: 768px) {
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
+        }
+
+        /* 作品展示 - 网格 */
+        .portfolio {
+            padding: 5rem 0;
+            background: #fff;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .portfolio-item {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s;
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #f0f4fd 0%, #e6ecf9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2a5298;
+            font-weight: 500;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 30px rgba(42, 82, 152, 0.1);
         }
 
         /* 联系方式 */
         .contact {
-            padding: 4rem 0;
-            background: #f9f9f9;
+            padding: 5rem 0;
+            background: #f8faff;
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .contact-item {
+        .contact-card {
+            background: #fff;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
             text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
-        .contact-item i {
-            font-size: 2.5rem;
-            color: #e67e22;
+        .contact-icon {
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
 
-        .contact-item h3 {
-            font-size: 1.3rem;
+        .contact-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
             margin-bottom: 0.5rem;
+            color: #1e3c72;
         }
 
-        .contact-item p {
+        .contact-card p {
             color: #666;
+            font-size: 0.95rem;
         }
 
         /* 页脚 */
         .footer {
-            background: #222;
-            color: #aaa;
+            background: #1a2639;
+            color: #94a3b8;
             text-align: center;
-            padding: 2rem 0;
+            padding: 2.5rem 0;
+            font-size: 0.9rem;
         }
 
-        .footer p {
-            margin-bottom: 0.5rem;
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #fff;
         }
     </style>
-    <!-- 字体图标（Font Awesome）用于图标显示，你也可以用图片代替 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">兴孺广告</div>
+            <div class="logo">兴孺创意</div>
             <ul class="nav-links">
                 <li><a href="#home">首页</a></li>
                 <li><a href="#services">服务</a></li>
                 <li><a href="#about">关于</a></li>
+                <li><a href="#portfolio">作品</a></li>
                 <li><a href="#contact">联系</a></li>
             </ul>
         </div>
@@ -261,36 +393,49 @@
     <!-- Hero 区域 -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>成都兴孺广告创意策划有限公司</h1>
-            <p>创意点亮品牌 · 策划成就未来 —— 专注广告全案服务，助力企业脱颖而出</p>
-            <a href="#contact" class="btn">立即咨询</a>
+            <div class="hero-content">
+                <h1>成都兴孺广告创意策划有限公司</h1>
+                <p>我们不止于创意 · 更致力于用策略驱动品牌价值<br>专注广告全案服务，助力企业实现品效合一</p>
+                <a href="#contact" class="btn">开启合作</a>
+            </div>
         </div>
     </section>
 
     <!-- 服务介绍 -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">我们的服务</h2>
+            <h2 class="section-title">核心服务</h2>
+            <p class="section-subtitle">从策略到执行，我们提供一站式广告创意解决方案</p>
             <div class="service-grid">
                 <div class="service-card">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>品牌策划</h3>
-                    <p>从品牌定位到视觉识别，打造独一无二的品牌形象。</p>
+                    <div class="service-icon"><span>🎯</span></div>
+                    <h3>品牌全案策划</h3>
+                    <p>品牌定位、核心价值提炼、视觉识别系统、品牌故事构建，打造差异化品牌资产。</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>创意设计</h3>
-                    <p>平面设计、包装设计、UI设计，让创意落地。</p>
+                    <div class="service-icon"><span>✏️</span></div>
+                    <h3>创意视觉设计</h3>
+                    <p>LOGO设计、VI系统、包装设计、宣传物料、UI界面，让创意精准传达品牌理念。</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-video"></i>
-                    <h3>影视制作</h3>
-                    <p>宣传片、广告片、短视频，用影像讲述品牌故事。</p>
+                    <div class="service-icon"><span>🎬</span></div>
+                    <h3>影视广告制作</h3>
+                    <p>企业宣传片、TVC广告、短视频内容、产品视频，用影像讲述品牌故事。</p>
                 </div>
                 <div class="service-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>营销推广</h3>
-                    <p>新媒体运营、活动策划、媒介投放，精准触达用户。</p>
+                    <div class="service-icon"><span>📱</span></div>
+                    <h3>新媒体运营</h3>
+                    <p>社交媒体策略、内容创作、KOL合作、社群运营，全渠道触达目标用户。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><span>📊</span></div>
+                    <h3>数字营销</h3>
+                    <p>搜索引擎优化、信息流广告、精准投放、数据分析，实现品效合一。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><span>🎪</span></div>
+                    <h3>活动策划执行</h3>
+                    <p>新品发布会、品牌快闪、线下体验活动、会展策划，打造沉浸式品牌体验。</p>
                 </div>
             </div>
         </div>
@@ -302,14 +447,45 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>关于兴孺广告</h2>
-                    <p>成都兴孺广告创意策划有限公司成立于2015年，是一家集品牌策划、创意设计、影视制作、营销推广于一体的综合性广告公司。我们拥有经验丰富的创意团队和执行团队，致力于为客户提供从策略到落地的全方位广告服务。</p>
-                    <p>多年来，我们服务了上百家知名企业，涵盖快消、科技、文旅、教育等多个领域。我们坚信，每一个品牌都值得被用心对待，每一次传播都应充满创意。</p>
-                    <a href="#contact" class="btn">了解更多</a>
+                    <p>成都兴孺广告创意策划有限公司成立于2015年，是一家集品牌策划、创意设计、影视制作、数字营销于一体的综合性广告公司。我们拥有一支经验丰富的创意团队和执行团队，核心成员均来自国内一线广告公司，服务领域涵盖快消、科技、文旅、教育、金融等多个行业。</p>
+                    <p>我们始终相信，优秀的广告不仅是视觉的享受，更是商业价值的放大器。因此，我们坚持用策略驱动创意，用数据验证效果，致力于为每一个品牌找到最适合的沟通方式，实现真正的品效合一。</p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">服务客户</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">8年</div>
+                            <div class="stat-label">行业深耕</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">客户续约率</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="about-image">
-                    <!-- 请将 about.jpg 放在 images 文件夹下，或替换为你的图片 -->
-                    <img src="images/about.jpg" alt="关于我们" onerror="this.src='https://via.placeholder.com/600x400'">
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 5rem; margin-bottom: 1rem;">🎨</div>
+                        <div>创意 · 策略 · 执行</div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品展示 -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">精选案例</h2>
+            <p class="section-subtitle">用作品说话，见证品牌成长</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">某科技品牌全案</div>
+                <div class="portfolio-item">文旅项目整合营销</div>
+                <div class="portfolio-item">快消品视觉升级</div>
+                <div class="portfolio-item">教育机构品牌重塑</div>
+                <div class="portfolio-item">金融科技创意短片</div>
+                <div class="portfolio-item">高端酒店宣传片</div>
             </div>
         </div>
     </section>
@@ -318,26 +494,30 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">联系我们</h2>
+            <p class="section-subtitle">让创意连接商业，期待与您合作</p>
             <div class="contact-grid">
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>地址</h3>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>公司地址</h3>
                     <p>四川省成都市高新区天府大道中段123号</p>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone-alt"></i>
-                    <h3>电话</h3>
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>联系电话</h3>
                     <p>028-1234 5678</p>
+                    <p>139-8888-6666</p>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <h3>邮箱</h3>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>电子邮箱</h3>
                     <p>info@xingruad.com</p>
+                    <p>合作咨询：bd@xingruad.com</p>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-clock"></i>
+                <div class="contact-card">
+                    <div class="contact-icon">⏰</div>
                     <h3>工作时间</h3>
-                    <p>周一至周五 9:00 - 18:00</p>
+                    <p>周一至周五 9:00-18:00</p>
+                    <p>周末及节假日预约制</p>
                 </div>
             </div>
         </div>
@@ -346,8 +526,8 @@
     <!-- 页脚 -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 成都兴孺广告创意策划有限公司 版权所有</p>
-            <p>蜀ICP备12345678号</p>
+            <p>© 2026 成都兴孺广告创意策划有限公司 版权所有</p>
+            <p style="margin-top: 0.5rem;">蜀ICP备12345678号-1 | 创意驱动品牌 · 策略成就未来</p>
         </div>
     </footer>
 </body>

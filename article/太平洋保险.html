@@ -169,7 +169,7 @@
     </style>
 </head>
 <body>
-    <!-- 导航栏（与首页一致） -->
+    <!-- 导航栏（已添加“新闻中心”链接） -->
     <header class="navbar">
         <div class="container">
             <div class="logo">
@@ -181,6 +181,7 @@
                     <li><a href="/#about">关于我们</a></li>
                     <li><a href="/#services">服务项目</a></li>
                     <li><a href="/#cases">成功案例</a></li>
+                    <li><a href="../news.html">新闻中心</a></li>  <!-- 新增新闻中心链接 -->
                     <li><a href="/#contact">联系我们</a></li>
                 </ul>
             </nav>
@@ -199,6 +200,12 @@
                 </div>
                 <div class="article-content">
                     <p>太平洋财产保险股份有限公司四川分公司成立于2007年，总部位于成都，是中国太平洋保险（集团）股份有限公司旗下核心成员。公司秉持“诚信天下、稳健一生、追求卓越”的核心价值观，致力于为个人及企业客户提供全面的保险保障服务。汽车保险作为公司重点发展领域，涵盖家庭自用车、商务车、营运车辆、新能源车等全系列车型。</p>
+<!-- 插入一张图片，居中显示，并设置适当宽度 -->
+<div style="text-align: center; margin: 20px 0;">
+    <img src="../images/tpy.png" 
+         alt="太平洋保险宣传图" 
+         style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+</div>
                     
                     <h3>优质服务承诺</h3>
                     <p>太平洋保险四川分公司实行7×24小时全天候报案受理及现场查勘服务。对于成都市中心城区的事故，查勘员承诺30分钟内到达；近郊区域1小时内到达；偏远地区主动与客户协商确定查勘方式。同时，客户可通过“太平洋保险”APP或微信公众号实时查询理赔进度、上传资料、预约维修，全程透明便捷。</p>
@@ -210,27 +217,34 @@
                 </div>
             </div>
 
-            <!-- 右侧侧边栏（更多推荐） -->
+            <!-- 右侧侧边栏（已添加“本文浏览量”模块） -->
             <div class="article-sidebar">
+                <!-- 新增本文浏览量模块（红框位置） -->
+                <div class="sidebar-section">
+                    <h3>本文浏览量</h3>
+                    <div style="font-size: 20px; font-weight: bold; color: #1e3c72; text-align: center;">
+                        <span id="busuanzi_value_page_pv"></span> 次
+                    </div>
+                </div>
+
                 <div class="sidebar-section">
                     <h3>更多推荐</h3>
-                  <ul class="recommend-list">
-    <li>
-        <a href="../news.html">返回新闻中心</a>
-        <div class="date">更多文章</div>
-    </li>
-    <li>
-        <a href="../article/太平洋保险.html">太平洋保险</a>
-        <div class="date">2026-03-04</div>
-    </li>
-    <!-- 以后新增文章时在此添加 -->
-</ul>
+                    <ul class="recommend-list">
+                        <li>
+                            <a href="../news.html">返回新闻中心</a>
+                            <div class="date">更多文章</div>
+                        </li>
+                        <li>
+                            <a href="太平洋保险.html">太平洋保险</a>  <!-- 修正为正确文件名 -->
+                            <div class="date">2026-03-04</div>
+                        </li>
+                        <!-- 以后新增文章时在此添加 -->
+                    </ul>
                 </div>
                 <div class="sidebar-section">
                     <h3>联系我们</h3>
                     <div class="contact-info">
-                        <p><i>📍</i> 成都市高新区区新光路32号</p>
-                        
+                        <p><i>📍</i> 成都市高新区新光路32号</p>
                         <p><i>⏰</i> 周一至周五 9:00-18:00</p>
                     </div>
                 </div>
@@ -238,39 +252,15 @@
         </div>
     </div>
 
-    <!-- 页脚 -->
+    <!-- 页脚（已移除全站总浏览量，仅保留版权） -->
     <footer class="footer">
         <div class="container">
             <p>© 2026 成都兴孺广告创意策划有限公司 版权所有</p>
-            <p style="margin-top: 10px; font-size: 13px;">
-                <span>本站总浏览量：</span>
-                <span id="busuanzi_value_site_pv" style="display: none;"></span>
-                <span id="custom_pv_display" style="font-weight: 600;">0</span>
-                <span>次</span>
-            </p>
         </div>
     </footer>
 
-    <!-- 不蒜子脚本（需放置于页脚前） -->
+    <!-- 不蒜子脚本（仅保留基础脚本，移除自定义起点脚本） -->
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <script>
-    (function() {
-        // 网站总浏览量起点（可修改）
-        var countOffset = 1000;
-        var displaySpan = document.getElementById('custom_pv_display');
-        var valueSpan = document.getElementById('busuanzi_value_site_pv');
-
-        var timer = setInterval(function() {
-            if (valueSpan && valueSpan.innerText) {
-                var cleanNum = valueSpan.innerText.replace(/[^0-9]/g, '');
-                var bszNum = parseInt(cleanNum, 10) || 0;
-                displaySpan.innerText = bszNum + countOffset;
-                clearInterval(timer);
-            }
-        }, 100);
-    })();
-    </script>
-
-    <!-- 文章页浏览量（不蒜子会自动填充 busuanzi_value_page_pv） -->
+    <!-- 注意：不蒜子会自动填充 busuanzi_value_page_pv，无需额外脚本 -->
 </body>
 </html>

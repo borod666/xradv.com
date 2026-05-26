@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>北部湾财产保险 - 兴孺广告</title>
+    <title>企业防灾减损必备——企财险 - 兴孺广告</title>
     <style>
         * {
             margin: 0;
@@ -12,266 +12,229 @@
         }
         body {
             font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             color: #333;
+            background: #f5f7fa;
         }
         .container {
-            width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
+            padding: 40px 20px;
         }
-        @media (max-width: 1200px) {
-            .container {
-                width: 96%;
-            }
-        }
-        /* 导航栏 */
-        .navbar {
+        /* 文章卡片 */
+        .article-card {
             background: #fff;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            overflow: hidden;
         }
-        .navbar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
+        /* 头部图 */
+        .article-header-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            display: block;
         }
-        .logo a {
-            font-size: 24px;
-            font-weight: bold;
-            color: #1e3c72;
-            text-decoration: none;
+        /* 文章内容 */
+        .article-body {
+            padding: 40px 50px;
         }
-        .nav ul {
-            display: flex;
-            list-style: none;
-        }
-        .nav ul li {
-            margin-left: 30px;
-        }
-        .nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-        .nav ul li a:hover {
-            color: #1e3c72;
-        }
-        /* 文章主体 */
-        .article-wrapper {
-            display: flex;
-            gap: 40px;
-            padding: 40px 0;
-        }
-        .article-main {
-            flex: 2.5;
-        }
-        .article-sidebar {
-            flex: 1.2;
-        }
+        /* 标题 */
         .article-title {
-            font-size: 32px;
-            color: #1e3c72;
-            margin-bottom: 15px;
-            font-weight: 600;
+            font-size: 28px;
+            color: #1a1a1a;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 20px;
         }
+        /* meta信息 */
         .article-meta {
-            background: #f5f7fa;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
             font-size: 14px;
-            color: #555;
-            border-left: 4px solid #1e3c72;
+            color: #999;
         }
-        .article-meta span {
-            color: #1e3c72;
+        .article-meta .tag {
+            background: #e8f0ff;
+            color: #3b6fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        .article-meta .source {
+            color: #1a1a1a;
             font-weight: 500;
         }
+        .article-meta .date {
+            color: #666;
+        }
+        .article-meta .views {
+            color: #999;
+        }
+        /* 正文 */
         .article-content {
             font-size: 16px;
             color: #444;
+            line-height: 1.9;
         }
         .article-content p {
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             text-align: justify;
         }
         .article-content h3 {
-            font-size: 20px;
-            color: #1e3c72;
-            margin: 30px 0 15px;
-        }
-        .sidebar-section {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-        .sidebar-section h3 {
             font-size: 18px;
-            color: #1e3c72;
-            margin-bottom: 15px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #1e3c72;
+            color: #1a1a1a;
+            margin: 35px 0 18px;
+            padding-left: 12px;
+            border-left: 4px solid #3b6fff;
         }
-        .recommend-list {
+        .article-content ul {
+            margin: 20px 0 30px 20px;
             list-style: none;
         }
-        .recommend-list li {
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #ddd;
+        .article-content ul li {
+            margin-bottom: 14px;
+            padding-left: 24px;
+            position: relative;
         }
-        .recommend-list li:last-child {
-            border-bottom: none;
+        .article-content ul li::before {
+            content: "•";
+            color: #3b6fff;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
         }
-        .recommend-list a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            display: block;
-            margin-bottom: 5px;
-        }
-        .recommend-list a:hover {
-            color: #1e3c72;
-        }
-        .recommend-list .date {
-            font-size: 12px;
-            color: #999;
-        }
-        .contact-info {
-            background: #eef2f6;
-            padding: 15px;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-        .contact-info p {
-            margin-bottom: 8px;
-        }
-        .contact-info i {
-            color: #1e3c72;
-            margin-right: 8px;
-        }
-        /* 页脚 */
-        .footer {
-            background: #1a2639;
-            color: #94a3b8;
+        /* 结尾图 */
+        .article-footer-img {
+            margin-top: 30px;
             text-align: center;
-            padding: 40px 0;
+        }
+        .article-footer-img img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        /* 底部导航 */
+        .article-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 0;
+            border-top: 1px solid #eee;
             margin-top: 40px;
         }
-        .footer p {
-            margin-bottom: 10px;
+        .article-nav a {
+            color: #3b6fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .article-nav a:hover {
+            text-decoration: underline;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .article-body {
+                padding: 25px 20px;
+            }
+            .article-title {
+                font-size: 22px;
+            }
+            .article-meta {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <header class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="/">兴孺广告</a>
+    <header style="background:#fff;box-shadow:0 2px 10px rgba(0,0,0,0.05);padding:0 20px;">
+        <div style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:70px;">
+            <div style="font-size:22px;font-weight:bold;color:#1e3c72;">
+                <a href="/" style="text-decoration:none;color:#1e3c72;">兴孺广告</a>
             </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="/">首页</a></li>
-                    <li><a href="/#about">关于我们</a></li>
-                    <li><a href="/#services">服务项目</a></li>
-                    <li><a href="/#cases">成功案例</a></li>
-                    <li><a href="../news.html">新闻中心</a></li>
-                    <li><a href="/#contact">联系我们</a></li>
+            <nav>
+                <ul style="display:flex;list-style:none;gap:25px;">
+                    <li><a href="/" style="text-decoration:none;color:#333;">首页</a></li>
+                    <li><a href="/#about" style="text-decoration:none;color:#333;">关于我们</a></li>
+                    <li><a href="/#services" style="text-decoration:none;color:#333;">服务项目</a></li>
+                    <li><a href="/#cases" style="text-decoration:none;color:#333;">成功案例</a></li>
+                    <li><a href="../news.html" style="text-decoration:none;color:#333;">新闻中心</a></li>
+                    <li><a href="/#contact" style="text-decoration:none;color:#333;">联系我们</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <div class="article-wrapper">
-            <!-- 左侧文章主体 -->
-            <div class="article-main">
-                <h1 class="article-title">北部湾财产保险</h1>
+        <article class="article-card">
+            <!-- 顶部大图 -->
+            <img src="../images/BBW.jpg" alt="企业财产保险" class="article-header-img">
+            
+            <!-- 文章主体 -->
+            <div class="article-body">
+                <h1 class="article-title">企业防灾减损必备——企财险</h1>
+                
                 <div class="article-meta">
-                    分类：<span>北部湾财产保险</span><br>
-                    来源：<span>兴孺广告</span> 发布时间：<span>2026-03-04</span> 
-                    浏览量：<span id="busuanzi_value_page_pv" data-value="170000"></span>
+                    <span class="tag">企业保险</span>
+                    <span class="source">兴孺广告</span>
+                    <span class="date" id="pub-date">2026-05-26</span>
+                    <span class="views">浏览：<span id="busuanzi_value_page_pv" data-value="170000">170000</span> 次</span>
                 </div>
+
                 <div class="article-content">
-                    <div style="text-align: center; margin: 20px 0;">
-                        <img src="../images/BBW.jpg" alt="北部湾财产保险宣传图" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    </div>
-                    <p>秋意渐浓，天干物燥，秋季是火灾高发期，加之用电、用气、用火现象明显增多，若操作不慎或使用不当，极容易引发火灾事故。除此之外，若是遇到洪涝天气，不仅使我们的房屋住宅倒塌，企业也将受损严重。
+                    <p>秋意渐浓，天干物燥，秋季是火灾高发期，加之用电、用气、用火现象明显增多，若操作不慎或使用不当，极容易引发火灾事故。除此之外，若是遇到洪涝天气，不仅使我们的房屋住宅倒塌，企业也将受损严重。</p>
 
-面对自然灾害，完善的保险经济补偿机制显得尤为重要。企业财产保险作为财产保险的一种，是在火灾保险的基础上发展而来的。随着保险业的发展，逐步建立起了保险责任完备、适用需求广泛、具有综合保障的企业财产保险保障体系。
+                    <p>面对自然灾害，完善的保险经济补偿机制显得尤为重要。企业财产保险作为财产保险的一种，是在火灾保险的基础上发展而来的。随着保险业的发展，逐步建立起了保险责任完备、适用需求广泛、具有综合保障的企业财产保险保障体系。</p>
 
-企业财产保险有三个基本险种：财产保险基本险、综合险、一切险，也被称为“火险”条款。
+                    <h3>企业财产保险的三个基本险种</h3>
+                    <p>企业财产保险有三个基本险种：财产保险基本险、综合险、一切险，也被称为"火险"条款。</p>
 
-基本险
-
-只承保火灾、爆炸、雷击和空中物体坠落等风险造成的损失，以及包含施救费用。
-
-综合险
-
-在基本险基础上将暴雨、洪水等14种列明的自然灾害作为保险责任；同时包含自有设备三停（停电、停水、停气）责任。
-
-一切险
-
-承保范围最宽，保险责任采用概括式，即负责承保除“除外责任”以外的一切自然灾害和意外事故损失。
-
-哪些可以投保呢？
-
-房屋建筑物及装修，机器设备，各种生产用具、仪器，存货（原材料、半成品、再产品、产成品、库存商品）等等均可投保。
-
-一些防灾减损的小建议：
-
-1、电器设备周围不应存放易燃、可燃或难燃物品。
-
-2、电气线路和照明灯具下方不应堆放易燃、可燃或难燃物品，其垂直下方与易燃、可燃或难燃物品间的水平间距不应小于0.5米。
-
-3、所有机动车辆进入库区前应安装防火罩。
-
-4、保证消防设施处于正常运行或准工作状态，不得擅自断电停运或长期带故障工作。
-
-5、消防器材应当设置在明显和便于取用的地点，周围不准堆放物品和杂物。
-
-6、准备沙袋、防水布、抽水机等应急物资。
-
-7、定期检查、保养排水设备，保证设备正常工作等。
-
-自然灾害不可控，只有提前预防，做好万全准备，才能尽最大程度减少损失。</p>
-                    
-                    </p>
-                </div>
-            </div>
-
-            <!-- 右侧侧边栏（已删除“本文浏览量”模块） -->
-            <div class="article-sidebar">
-                <div class="sidebar-section">
-                    <h3>更多推荐</h3>
-                    <ul class="recommend-list">
-                        <li><a href="../news.html">返回新闻中心</a><div class="date">更多文章</div></li>
-                        <li><a href="北部湾财产保险.html" target="_blank" rel="noopener noreferrer">北部湾财产保险</a><div class="date">2026-03-04</div></li>
-                        <li><a href="恒邦汽车保险.html" target="_blank" rel="noopener noreferrer">恒邦保险汽车保险</a><div class="date">2026-03-05</div></li>
+                    <ul>
+                        <li><strong>基本险</strong>：只承保火灾、爆炸、雷击和空中物体坠落等风险造成的损失，以及包含施救费用。</li>
+                        <li><strong>综合险</strong>：在基本险基础上将暴雨、洪水等14种列明的自然灾害作为保险责任；同时包含自有设备三停（停电、停水、停气）责任。</li>
+                        <li><strong>一切险</strong>：承保范围最宽，保险责任采用概括式，即负责承保除"除外责任"以外的一切自然灾害和意外事故损失。</li>
                     </ul>
-                </div>
-                <div class="sidebar-section">
-                    <h3>联系我们</h3>
-                    <div class="contact-info">
-                        <p><i>📍</i> 成都市高新区新光路32号</p>
-                        <p><i>⏰</i> 周一至周五 9:00-18:00</p>
+
+                    <h3>哪些可以投保？</h3>
+                    <p>房屋建筑物及装修，机器设备，各种生产用具、仪器，存货（原材料、半成品、再产品、产成品、库存商品）等等均可投保。</p>
+
+                    <h3>防灾减损小建议</h3>
+                    <ul>
+                        <li>电器设备周围不应存放易燃、可燃或难燃物品。</li>
+                        <li>电气线路和照明灯具下方不应堆放易燃、可燃或难燃物品，其垂直下方与易燃、可燃或难燃物品间的水平间距不应小于0.5米。</li>
+                        <li>所有机动车辆进入库区前应安装防火罩。</li>
+                        <li>保证消防设施处于正常运行或准工作状态，不得擅自断电停运或长期带故障工作。</li>
+                        <li>消防器材应当设置在明显和便于取用的地点，周围不准堆放物品和杂物。</li>
+                        <li>准备沙袋、防水布、抽水机等应急物资。</li>
+                        <li>定期检查、保养排水设备，保证设备正常工作等。</li>
+                    </ul>
+
+                    <p>自然灾害不可控，只有提前预防，做好万全准备，才能尽最大程度减少损失。</p>
+
+                    <!-- 结尾图片 -->
+                    <div class="article-footer-img">
+                        <img src="../images/BBW.jpg" alt="企业财产保险宣传图" style="max-width:100%;border-radius:8px;">
                     </div>
                 </div>
+
+                <!-- 底部导航 -->
+                <div class="article-nav">
+                    <a href="../news.html">← 返回新闻中心</a>
+                    <a href="北部湾财产保险.html">更多文章 →</a>
+                </div>
             </div>
-        </div>
+        </article>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <p>© 2026 成都兴孺广告创意策划有限公司 版权所有</p>
-        </div>
+    <!-- 页脚 -->
+    <footer style="background:#1a2639;color:#94a3b8;text-align:center;padding:40px 20px;margin-top:40px;">
+        <p>© 2026 成都兴孺广告创意策划有限公司 版权所有</p>
     </footer>
+
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </body>
 </html>

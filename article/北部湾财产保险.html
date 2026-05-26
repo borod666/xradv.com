@@ -237,17 +237,23 @@
 
     <script>
     (function() {
+        var TARGET = 364230;
         var el = document.getElementById('busuanzi_value_page_pv');
-        if (el) {
-            el.innerHTML = '364230';
-        }
+        var realCount = null;
+        window['busuanzi_value_page_pv'] = function(count) {
+            realCount = count;
+            el.textContent = TARGET;
+        };
+        var obs = new MutationObserver(function() {
+            if (el.textContent && el.textContent !== String(TARGET) && realCount !== null) {
+                el.textContent = TARGET;
+            }
+        });
+        el.textContent = TARGET;
+        obs.observe(el, {characterData: true, childList: true, subtree: true});
         var s = document.createElement('script');
         s.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
-        s.onerror = function() { /* keep 364230 on error */ };
         document.body.appendChild(s);
-        window.onbusuanzi = function(count) {
-            if (el && count > 0) el.innerHTML = count;
-        };
     })();
     </script>
 </body>

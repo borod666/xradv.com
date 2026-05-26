@@ -182,7 +182,7 @@
                     <span class="tag">企业保险</span>
                     <span class="source">兴孺广告</span>
                     
-                    <span class="views">浏览：<span id="busuanzi_value_page_pv">364230</span> 次</span>
+                    <span class="views">浏览：<span id="busuanzi_value_page_pv" style="display:none"></span><span id="custom_pv_page">364230</span> 次</span>
                 </div>
 
                 <div class="article-content">
@@ -235,26 +235,18 @@
     
     
 
+    
+
     <script>
-    (function() {
-        var TARGET = 364230;
-        var el = document.getElementById('busuanzi_value_page_pv');
-        var realCount = null;
-        window['busuanzi_value_page_pv'] = function(count) {
-            realCount = count;
-            el.textContent = TARGET;
-        };
-        var obs = new MutationObserver(function() {
-            if (el.textContent && el.textContent !== String(TARGET) && realCount !== null) {
-                el.textContent = TARGET;
-            }
-        });
-        el.textContent = TARGET;
-        obs.observe(el, {characterData: true, childList: true, subtree: true});
-        var s = document.createElement('script');
-        s.src = 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js';
-        document.body.appendChild(s);
-    })();
+    var BUSUANZI_OFFSET = 363301;
+    var pvDisplay = document.getElementById('custom_pv_page');
+    window['busuanzi_value_page_pv'] = function(count) {
+        if (pvDisplay && count > 0) {
+            pvDisplay.textContent = count + BUSUANZI_OFFSET;
+        }
+    };
     </script>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 </body>
 </html>

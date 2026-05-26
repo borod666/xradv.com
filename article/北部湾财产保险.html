@@ -237,49 +237,23 @@
     
 
 
+    
+
+
     <script>
     (function() {
         var OFFSET = 363301;
-        var el = document.getElementById('custom_pv_page');
-        
-        // Set initial value
-        el.textContent = OFFSET;
-        
-        // Hijack innerHTML setter on the element
-        var _innerHTML = Object.getOwnPropertyDescriptor(Element.prototype, 'innerHTML').set;
-        var _bypass = false;
-        Object.defineProperty(el, 'innerHTML', {
-            set: function(v) {
-                if (_bypass) { _innerHTML.call(el, v); _bypass = false; }
-                // else: ignore the write
+        var displaySpan = document.getElementById('custom_pv_page');
+        var valueSpan = document.getElementById('busuanzi_value_page_pv');
+
+        var timer = setInterval(function() {
+            if (valueSpan && valueSpan.innerText) {
+                var cleanNum = valueSpan.innerText.replace(/[^0-9]/g, '');
+                var bszNum = parseInt(cleanNum, 10) || 0;
+                displaySpan.innerText = bszNum + OFFSET;
+                clearInterval(timer);
             }
-        });
-        
-        // Hijack busuanzi callback via defineProperty (runs BEFORE our <script> tag)
-        // Since busuanzi does: window['busuanzi_value_page_pv'] = function(count){...}
-        // we need to intercept when busuanzi sets this property
-        Object.defineProperty(window, 'busuanzi_value_page_pv', {
-            set: function(fn) {
-                if (typeof fn === 'function') {
-                    window['_busuanzi_cb'] = function(count) {
-                        if (count > 0) {
-                            _bypass = true;
-                            el.textContent = count + OFFSET;
-                        }
-                        fn(count);
-                    };
-                }
-            },
-            get: function() { return window['_busuanzi_cb']; }
-        });
-        
-        // Our own display: update when busuanzi calls back
-        window['busuanzi_value_page_pv'] = function(count) {
-            if (count > 0) {
-                _bypass = true;
-                el.textContent = count + OFFSET;
-            }
-        };
+        }, 100);
     })();
     </script>
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

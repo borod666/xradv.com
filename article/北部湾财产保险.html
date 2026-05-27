@@ -213,22 +213,8 @@
     </footer>
 
     <script>
-    (function() {
-        var OFFSET = 169330;
-        var displaySpan = document.getElementById('custom_pv_page');
-        var valueSpan = document.getElementById('busuanzi_value_page_pv');
-
-        var timer = setInterval(function() {
-            if (valueSpan && valueSpan.innerText) {
-                var cleanNum = valueSpan.innerText.replace(/[^0-9]/g, '');
-                var bszNum = parseInt(cleanNum, 10) || 0;
-                displaySpan.innerText = bszNum + OFFSET;
-                clearInterval(timer);
-            }
-        }, 100);
-    })();
+    document.getElementById('custom_pv_page').innerText = 169330;
     </script>
-    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 </body>
 </html>

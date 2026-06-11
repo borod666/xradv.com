@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新闻中心 - 成都兴孺广告创意策划有限公司</title>
     <style>
-        /* 沿用你现有的所有样式，这里为了完整性合并，你可以直接复制你之前的样式，或保留外部CSS */
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +24,6 @@
                 width: 96%;
             }
         }
-        /* 导航栏 */
         .navbar {
             background: #fff;
             box-shadow: 0 2px 20px rgba(0,0,0,0.05);
@@ -61,7 +59,6 @@
         .nav ul li a:hover {
             color: #1e3c72;
         }
-        /* 两栏布局（与文章页一致） */
         .article-wrapper {
             display: flex;
             gap: 40px;
@@ -73,7 +70,6 @@
         .article-sidebar {
             flex: 1.2;
         }
-        /* 新闻列表样式 */
         .news-item {
             padding: 25px 0;
             border-bottom: 1px solid #eee;
@@ -111,7 +107,6 @@
         .read-more:hover {
             text-decoration: underline;
         }
-        /* 侧边栏样式 */
         .sidebar-section {
             background: #f9f9f9;
             padding: 20px;
@@ -163,7 +158,6 @@
             color: #1e3c72;
             margin-right: 8px;
         }
-        /* 页脚 */
         .footer {
             background: #1a2639;
             color: #94a3b8;
@@ -177,7 +171,6 @@
     </style>
 </head>
 <body>
-    <!-- 导航栏（与首页一致） -->
     <header class="navbar">
         <div class="container">
             <div class="logo">
@@ -198,50 +191,54 @@
 
     <div class="container">
         <div class="article-wrapper">
-            <!-- 左侧文章列表 -->
             <div class="article-main">
                 <h1 class="article-title" style="margin-bottom: 20px;">新闻中心</h1>
                 <div class="news-list">
-                    <!-- 文章条目 1：北部湾财产保险 -->
+                    <div class="news-item">
+                        <h2><a href="article/车辆被水泡保险公司赔付说明.html" target="_blank" rel="noopener noreferrer">车辆被水泡，保险公司会如何赔付</a></h2>
+                        <p class="news-excerpt">暴雨天气常常会导致路面积水严重，不少车主会遭遇车辆被水泡的糟心事。车辆被水泡后，维修费用往往是个大问题...</p>
+                        <a href="article/车辆被水泡保险公司赔付说明.html" class="read-more" target="_blank" rel="noopener noreferrer">阅读全文 &gt;&gt;</a>
+                    </div>
+                    <div class="news-item">
+                        <h2><a href="article/道路客运承运人责任险详解.html" target="_blank" rel="noopener noreferrer">道路客运承运人责任险详解</a></h2>
+                        <p class="news-excerpt">近年来交通事故频繁发生，客运车辆意外事故频率逐渐升高，而其往往会造成重大的人身伤亡和财产损失...</p>
+                        <a href="article/道路客运承运人责任险详解.html" class="read-more" target="_blank" rel="noopener noreferrer">阅读全文 &gt;&gt;</a>
+                    </div>
                     <div class="news-item">
                         <h2><a href="article/北部湾财产保险.html" target="_blank" rel="noopener noreferrer">北部湾财产保险</a></h2>
-                        
-                        <p class="news-excerpt">面对自然灾害，完善的保险经济补偿机制显得尤为重要。企业财产保险作为财产保险的一种，是在火灾保险的基础上发展而来的。随着保险业的发展，逐步建立起了保险责任完备、适用需求广泛、具有综合保障的企业财产保险保障体系。</p>
+                        <p class="news-excerpt">面对自然灾害，完善的保险经济补偿机制显得尤为重要。企业财产保险作为财产保险的一种，是在火灾保险的基础上发展而来的...</p>
                         <a href="article/北部湾财产保险.html" class="read-more" target="_blank" rel="noopener noreferrer">阅读全文 &gt;&gt;</a>
                     </div>
-                    <!-- 后续可继续添加其他文章 -->
-<!-- 文章条目 2：利宝保险 -->
-<div class="news-item">
-    <h2><a href="article/利宝保险.html" target="_blank" rel="noopener noreferrer">利宝保险</a></h2>
-    
-    <p class="news-excerpt">利宝互助保险是一家多险种的国际保险公司，创建于1912年，总部设在美国马萨诸塞州的波士顿，目前在全球27个国家和地区设有分支机构，有大约40,000名员工，按2024年最新数据，是全球第9大国际财险公司。</p>
-    <a href="article/利宝保险.html" class="read-more" target="_blank" rel="noopener noreferrer">阅读全文 &gt;&gt;</a>
-</div>
-<!-- 后续可继续添加其他文章 -->  
+                    <div class="news-item">
+                        <h2><a href="article/利宝保险.html" target="_blank" rel="noopener noreferrer">利宝保险</a></h2>
+                        <p class="news-excerpt">利宝互助保险是一家多险种的国际保险公司，创建于1912年，总部设在美国马萨诸塞州的波士顿，目前在全球27个国家和地区设有分支机构...</p>
+                        <a href="article/利宝保险.html" class="read-more" target="_blank" rel="noopener noreferrer">阅读全文 &gt;&gt;</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- 右侧侧边栏（更多推荐） -->
             <div class="article-sidebar">
                 <div class="sidebar-section">
                     <h3>更多推荐</h3>
                     <ul class="recommend-list">
                         <li>
-                            <a href="article/北部湾财产保险.html" target="_blank" rel="noopener noreferrer">北部湾财产保险</a>
-                            
+                            <a href="article/车辆被水泡保险公司赔付说明.html" target="_blank" rel="noopener noreferrer">车辆被水泡，保险公司会如何赔付</a>
                         </li>
-<li>
-    <a href="article/利宝保险.html" target="_blank" rel="noopener noreferrer">利宝保险</a>
-    
-</li>
-                        <!-- 以后新增文章时在此添加更多 li -->
+                        <li>
+                            <a href="article/道路客运承运人责任险详解.html" target="_blank" rel="noopener noreferrer">道路客运承运人责任险详解</a>
+                        </li>
+                        <li>
+                            <a href="article/北部湾财产保险.html" target="_blank" rel="noopener noreferrer">北部湾财产保险</a>
+                        </li>
+                        <li>
+                            <a href="article/利宝保险.html" target="_blank" rel="noopener noreferrer">利宝保险</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="sidebar-section">
                     <h3>联系我们</h3>
                     <div class="contact-info">
                         <p><i>📍</i> 成都市高新区新光路32号</p>
-                      
                         <p><i>⏰</i> 周一至周五 9:00-18:00</p>
                     </div>
                 </div>
@@ -249,7 +246,6 @@
         </div>
     </div>
 
-    <!-- 页脚（包含浏览量统计） -->
     <footer class="footer">
         <div class="container">
             <p>© 2026 成都兴孺广告创意策划有限公司 版权所有</p>
@@ -262,11 +258,10 @@
         </div>
     </footer>
 
-    <!-- 不蒜子脚本（放在页脚前） -->
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <script>
     (function() {
-        var countOffset = 200; // 可修改为你的起点
+        var countOffset = 200;
         var displaySpan = document.getElementById('custom_pv_display');
         var valueSpan = document.getElementById('busuanzi_value_site_pv');
 
